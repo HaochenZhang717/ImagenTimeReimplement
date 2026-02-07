@@ -74,6 +74,7 @@ def main(args):
         # --- train loop ---
         for i, data in enumerate(train_loader, 1):
             x_ts = data[0].to(args.device)
+            breakpoint()
             x_img = model.ts_to_img(x_ts)
             optimizer.zero_grad()
             loss = model.loss_fn(x_img)
