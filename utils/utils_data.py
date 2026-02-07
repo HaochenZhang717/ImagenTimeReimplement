@@ -374,7 +374,7 @@ def build_dataloader(config, args=None):
 
 
 def build_dataloader_var(batch_size, data, window=24):
-    file_path=f'data_files/samples/{data}_norm_truth_{window}_train.npy'
+    file_path=f'../data_files/samples/{data}_norm_truth_{window}_train.npy'
 
     train_dataset = normalize_to_neg_one_to_one(np.load(file_path).astype(np.float32))
     ori_dataset = normalize_to_neg_one_to_one(np.load(file_path).astype(np.float32))
