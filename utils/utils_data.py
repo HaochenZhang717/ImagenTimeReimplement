@@ -380,9 +380,9 @@ def build_dataloader_var(batch_size, data, window=24):
 
     train_dataset = normalize_to_neg_one_to_one(np.load(file_path).astype(np.float32))
     ori_dataset = normalize_to_neg_one_to_one(np.load(file_path).astype(np.float32))
-    repeat_times=10
-    train_dataset = [train_dataset for _ in range(repeat_times)]
-    train_dataset = ConcatDataset(train_dataset)
+    # repeat_times=1
+    # train_dataset = [train_dataset for _ in range(repeat_times)]
+    # train_dataset = ConcatDataset(train_dataset)
     train_loader = torch.utils.data.DataLoader(
         train_dataset, batch_size,
         shuffle=True,
