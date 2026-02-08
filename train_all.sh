@@ -1,5 +1,5 @@
-#DATANAMES=("stock" "energy" "fmri" "ETTh1" "ETTh2" "ETTm1" "ETTm2"  )
-DATANAMES=("stock")
+DATANAMES=("stock" "energy" "fmri" "ETTh1" "ETTh2" "ETTm1" "ETTm2"  )
+#DATANAMES=("stock")
 
 export TORCHINDUCTOR_CACHE_DIR=/work/vb21/haochen/torch_cache/inductor
 export TORCH_COMPILE_CACHE_DIR=/work/vb21/haochen/torch_cache/compile

@@ -95,7 +95,7 @@ def main(args):
             model.on_train_batch_end()
 
         # --- evaluation loop ---
-        if epoch % args.logging_iter == 0:
+        if epoch % args.logging_iter == 0 and epoch > 0:
             gen_sig = []
             real_sig = []
             model.eval()
@@ -119,7 +119,6 @@ def main(args):
             gen_sig = np.vstack(gen_sig)
             real_sig = np.vstack(real_sig)
             scores = evaluate_model_uncond(real_sig, gen_sig, args)
-            breakpoint()
             # for key, value in scores.items():
             #     logger.log(f'test/{key}', value, epoch)
 
