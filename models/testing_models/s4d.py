@@ -491,7 +491,7 @@ def test_step():
     print("step outputs yx:\n", yx, yxs.shape)
     # print("step final state:\n", state)
 
-    breakpoint()
+    # breakpoint()
 
 
 if __name__ == '__main__':

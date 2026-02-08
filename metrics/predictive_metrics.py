@@ -128,6 +128,8 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from sklearn.metrics import mean_absolute_error
+from utils.utils import extract_time
+
 
 
 class GRUPredictor(nn.Module):
