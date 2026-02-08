@@ -114,11 +114,11 @@ def main(args):
                             x_ts = torch.clamp(x_ts, 0, 1)
 
                         gen_sig.append(x_ts.detach().cpu().numpy())
+                        breakpoint()
                         real_sig.append(data[0].detach().cpu().numpy())
 
             gen_sig = np.vstack(gen_sig)
             real_sig = np.vstack(real_sig)
-            breakpoint()
             scores = evaluate_model_uncond(real_sig, gen_sig, args)
             # for key, value in scores.items():
             #     logger.log(f'test/{key}', value, epoch)
