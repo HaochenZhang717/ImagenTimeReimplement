@@ -95,6 +95,7 @@ def main(args):
             model.on_train_batch_end()
 
         # --- evaluation loop ---
+        print(f"finish training Epoch {epoch}")
         if epoch % args.logging_iter == 0 and epoch > 0:
             gen_sig = []
             real_sig = []
