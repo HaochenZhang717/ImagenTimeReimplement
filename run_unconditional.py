@@ -105,7 +105,7 @@ def main(args):
                                                (args.input_channels, args.img_resolution, args.img_resolution))
                     for data in tqdm(test_loader):
                         # sample from the model
-                        x_img_sampled = process.sampling(sampling_number=data[0].shape[0])
+                        x_img_sampled = process.sampling(sampling_number=data.shape[0])
                         # --- convert to time series --
                         x_ts = model.img_to_ts(x_img_sampled)
 
@@ -114,12 +114,12 @@ def main(args):
                             x_ts = torch.clamp(x_ts, 0, 1)
 
                         gen_sig.append(x_ts.detach().cpu().numpy())
-                        breakpoint()
-                        real_sig.append(data[0].detach().cpu().numpy())
+                        real_sig.append(data.detach().cpu().numpy())
 
             gen_sig = np.vstack(gen_sig)
             real_sig = np.vstack(real_sig)
             scores = evaluate_model_uncond(real_sig, gen_sig, args)
+            breakpoint()
             # for key, value in scores.items():
             #     logger.log(f'test/{key}', value, epoch)
 
