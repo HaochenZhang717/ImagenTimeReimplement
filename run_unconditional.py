@@ -119,7 +119,7 @@ def main(args):
             gen_sig = np.vstack(gen_sig)
             real_sig = np.vstack(real_sig)
             scores = evaluate_model_uncond(real_sig, gen_sig, args)
-            # breakpoint()
+            breakpoint()
             # for key, value in scores.items():
             #     logger.log(f'test/{key}', value, epoch)
 
