@@ -72,7 +72,7 @@ def main(args):
         # logger.log_name_params('train/epoch', epoch)
 
         # --- train loop ---
-        for i, data in enumerate(train_loader, 1):
+        for data in train_loader:
             x_ts = data.to(args.device)
             x_img = model.ts_to_img(x_ts)
             optimizer.zero_grad()
